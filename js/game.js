@@ -18,10 +18,7 @@ function Game(canvas) {
         this.currentScreen = new BasicScreen("start",this.canvas, "Overtail", "Start!", this._changeScreen);
     }
   }.bind(this);
-  this.victoryScreen = new BasicScreen("victory", this.canvas, "You won!", "Restart", this._changeScreen);
-  this.gameOverScreen = new BasicScreen("gameOver", this.canvas, "You lost!", "Restart", this._changeScreen);
-  this.gameScreen = new GameScreen("game",this.canvas, this._changeScreen);
-  this.startScreen = new BasicScreen("start",this.canvas, "Overtail", "Start!", this._changeScreen);
+  
   this.currentScreen = new BasicScreen("start",this.canvas, "Overtail", "Start!", this._changeScreen);
   
 
