@@ -47,6 +47,7 @@ GameScreen.prototype.draw = function() {
 
 GameScreen.prototype.update = function() {
   this.elements.player.update();
+  this.elements.obstacles = this.elements.obstacles.filter(function(obstacle) { return obstacle.x > 0 - obstacle.sizeX })
   this.elements.obstacles.forEach(function(obstacle) {
     obstacle.update();
     if(this.elements.player.hasCollidedWithObstacle(obstacle)) {
