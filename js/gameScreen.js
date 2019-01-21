@@ -51,8 +51,9 @@ GameScreen.prototype.update = function() {
   this.elements.obstacles.forEach(function(obstacle) {
     obstacle.update();
     if(this.elements.player.hasCollidedWithObstacle(obstacle)) {
-      console.log("collided!");
+      this.elements.player.receiveDamage();
       obstacle.destroy();
+      if(this.elements.player.hp <= 0) this.changeScreen(this.name)
     }
   }.bind(this))
 }

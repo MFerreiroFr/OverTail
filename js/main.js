@@ -24,10 +24,12 @@ function startGame() {
   }
   
   function handleKeyRelease(event) {
-    switch(event.keyCode) {
-      case 38:
-      case 40:
-      game.currentScreen.stopPlayer();
+    if(game.currentScreen instanceof GameScreen){
+      switch(event.keyCode) {
+        case 38:
+        case 40:
+        game.currentScreen.stopPlayer();
+      }
     }
   }
   game.start();

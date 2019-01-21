@@ -41,3 +41,7 @@ Player.prototype.hasCollidedWithObstacle = function(obstacle) {
   if(collidesBottom && collidesRight && collidesTop) console.log(`Collided!`)
   return collidesBottom && collidesRight && collidesTop;
 }
+
+Player.prototype.receiveDamage = function() {
+  this.hp -= 5;
+}
