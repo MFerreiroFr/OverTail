@@ -3,12 +3,7 @@
 function GameScreen(name, canvas, changeScreen) {
   Screen.call(this, name, canvas, changeScreen);
 
-  this.statusBar = {
-    x: 0,
-    y: this.canvas.height - 100,
-    sizeX: this.canvas.width,
-    sizeY: 100
-  },
+  this.statusBar = new StatusBar(this.canvas, this.ctx, 100);
   this.elements = { 
     player: new Player(this.canvas, this.ctx, this.statusBar.sizeY),
     obstacles: [
@@ -35,11 +30,7 @@ function GameScreen(name, canvas, changeScreen) {
 
 GameScreen.prototype.draw = function() {
   this.elements.player.draw();
-  this.ctx.strokeRect(
-    this.statusBar.x,
-    this.statusBar.y,
-    this.statusBar.sizeX, 
-    this.statusBar.sizeY);
+  this.statusBar.draw();
     this.elements.obstacles.forEach(function(obstacle) {
       obstacle.draw();
     })
@@ -53,9 +44,11 @@ GameScreen.prototype.update = function() {
     if(this.elements.player.hasCollidedWithObstacle(obstacle)) {
       this.elements.player.receiveDamage();
       obstacle.destroy();
+      this.statusBar.update(this.elements.player.hp);
       if(this.elements.player.hp <= 0) this.changeScreen(this.name)
     }
-  }.bind(this))
+  }.bind(this));
+  
 }
 
 GameScreen.prototype.moveUp = function() {
