@@ -7,7 +7,7 @@ function Obstacle(canvas, ctx, x, sizeY, y, damage = 5) {
   this.y = y;
   this.sizeX = 15;
   this.sizeY = sizeY;
-  this.speed = 4;
+  this.speed = 3.7;
   this.direction = -1;
   this.damage = damage;
 }

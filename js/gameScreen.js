@@ -7,7 +7,8 @@ function GameScreen(name, canvas, changeScreen) {
   this.elements = { 
     player: new Player(this.canvas, this.ctx, this.statusBar.sizeY),
     obstacles: [
-      new TextObstacle(canvas, this.ctx,canvas.width, 0, 50, 0, "Avoid obstacles"),
+      new TextObstacle(canvas, this.ctx,canvas.width, 0, 50, 0, "Press the arrows to"),
+      new TextObstacle(canvas, this.ctx,canvas.width, 0, 75, 0, "avoid obstacles"),
       new Obstacle(canvas, this.ctx, canvas.width * 2 + 15, 250, 0),
 
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 15, 160, canvas.height - this.statusBar.sizeY - 160),
@@ -31,9 +32,17 @@ function GameScreen(name, canvas, changeScreen) {
       new TextObstacle(canvas, this.ctx,canvas.width * 5 + 70, 0, 50, 0, "Uuuup"),
       new Obstacle(canvas, this.ctx, canvas.width * 5 + 300, 340, canvas.height - this.statusBar.sizeY - 340),
       new TextObstacle(canvas, this.ctx,canvas.width * 6, 0, 50, 0, "Dooown"),
-      new Obstacle(canvas, this.ctx, canvas.width * 6 + 150, 340, 0)
+      new Obstacle(canvas, this.ctx, canvas.width * 6 + 150, 340, 0),
+
+      new TextObstacle(canvas, this.ctx,canvas.width * 7, 0, 50, 0, "Careful!"),
+      new Obstacle(canvas, this.ctx, canvas.width * 7 + 150, 400, 0, 4),
+
+      new TextObstacle(canvas, this.ctx,canvas.width * 8, 0, 50, 0, "Don't get hit"),
+      new TextObstacle(canvas, this.ctx,canvas.width * 9, 0, 50, 0, "You are ready now"),
+      new TextObstacle(canvas, this.ctx,canvas.width * 9, 0, 75, 0, "Good luck!")
     ]
   }
+  this.time = new Date();
 }
 
 GameScreen.prototype.draw = function() {
