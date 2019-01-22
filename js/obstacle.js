@@ -10,10 +10,11 @@ function Obstacle(canvas, ctx, x, sizeY, y, damage = 5) {
   this.speed = 3.7;
   this.direction = -1;
   this.damage = damage;
+  this.color = "white"
 }
 
 Obstacle.prototype.draw = function() {
-  this.ctx.fillStyle = "white"
+  this.ctx.fillStyle = this.color;
   this.ctx.fillRect(this.x,
     this.y,
     this.sizeX,

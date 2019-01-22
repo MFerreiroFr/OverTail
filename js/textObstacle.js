@@ -1,6 +1,5 @@
-function TextObstacle(canvas, ctx, x, sizeY, y, sizeX, text, damage = 0) {
+function TextObstacle(canvas, ctx, x, sizeY, y,  text, damage = 0) {
   Obstacle.call(this,canvas,ctx,x,sizeY,y,damage);
-  this.sizeX = sizeX
   this.text = text;
 }
 TextObstacle.prototype = Object.create(Obstacle.prototype);
