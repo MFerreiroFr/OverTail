@@ -10,11 +10,13 @@ function Player(canvas, ctx, bottomBorder) {
   this.direction = 0;
   this.speed = 5;
   this.bottomBorder = bottomBorder;
+  this.image = new Image();
+  this.image.src = "./assets/player.svg"
 }
 
 Player.prototype.draw = function() {
   this.ctx.fillStyle = "white"
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+  this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
   
 }
 

@@ -11,6 +11,7 @@ function StatusBar(canvas, ctx, height) {
 StatusBar.prototype.draw = function() {
   this.ctx.strokeStyle = "white";
   this.ctx.strokeRect(this.x, this.y, this.sizeX, this.sizeY);
+  
   this.ctx.fillStyle = "red";
   this.ctx.fillRect(this.sizeX / 2 - 25, this.canvas.height - this.sizeY / 2 - 5, 50, 10);
 
