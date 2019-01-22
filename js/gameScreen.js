@@ -43,7 +43,6 @@ function GameScreen(name, canvas, changeScreen) {
       new EndObstacle(canvas, this.ctx, canvas.width * 9 + 150, 398, 0)
     ]
   }
-  this.time = new Date();
 }
 
 GameScreen.prototype.draw = function() {
