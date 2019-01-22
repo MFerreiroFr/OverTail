@@ -24,6 +24,9 @@ function GameScreen(name, canvas, changeScreen) {
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 275, 120, 0),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 350, 160, canvas.height - this.statusBar.sizeY - 160),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 350, 160, 0),
+
+      new Obstacle(canvas, this.ctx, canvas.width * 5 + 300, 340, canvas.height - this.statusBar.sizeY - 340),
+      new Obstacle(canvas, this.ctx, canvas.width * 6 + 150, 340, 0)
     ]
   }
 }
