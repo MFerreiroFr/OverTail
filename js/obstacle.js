@@ -1,6 +1,6 @@
 "use strict";
 
-function Obstacle(canvas, ctx, x, sizeY, y) {
+function Obstacle(canvas, ctx, x, sizeY, y, damage = 5) {
   this.canvas = canvas;
   this.ctx = ctx;
   this.x = x;
@@ -9,6 +9,7 @@ function Obstacle(canvas, ctx, x, sizeY, y) {
   this.sizeY = sizeY;
   this.speed = 4;
   this.direction = -1;
+  this.damage = damage;
 }
 
 Obstacle.prototype.draw = function() {

@@ -7,10 +7,12 @@ function GameScreen(name, canvas, changeScreen) {
   this.elements = { 
     player: new Player(this.canvas, this.ctx, this.statusBar.sizeY),
     obstacles: [
+      new TextObstacle(canvas, this.ctx,canvas.width, 0, 50, 0, "Avoid obstacles"),
       new Obstacle(canvas, this.ctx, canvas.width * 2 + 15, 250, 0),
 
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 15, 160, canvas.height - this.statusBar.sizeY - 160),
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 15, 160, 0),
+      new TextObstacle(canvas, this.ctx,canvas.width * 3 + 110, 0, 50, 0, "Up"),
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 200, 160, canvas.height - this.statusBar.sizeY - 160),
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 200, 160, 0),
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 275, 200, canvas.height - this.statusBar.sizeY - 200),
@@ -18,6 +20,7 @@ function GameScreen(name, canvas, changeScreen) {
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 350, 240, canvas.height - this.statusBar.sizeY - 240),
       new Obstacle(canvas, this.ctx, canvas.width * 3 + 350, 80, 0),
 
+      new TextObstacle(canvas, this.ctx,canvas.width * 4 + 70, 0, 50, 0, "Down"),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 200, 240, canvas.height - this.statusBar.sizeY - 240),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 200, 80, 0),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 275, 200, canvas.height - this.statusBar.sizeY - 200),
@@ -25,7 +28,9 @@ function GameScreen(name, canvas, changeScreen) {
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 350, 160, canvas.height - this.statusBar.sizeY - 160),
       new Obstacle(canvas, this.ctx, canvas.width * 4 + 350, 160, 0),
 
+      new TextObstacle(canvas, this.ctx,canvas.width * 5 + 70, 0, 50, 0, "Uuuup"),
       new Obstacle(canvas, this.ctx, canvas.width * 5 + 300, 340, canvas.height - this.statusBar.sizeY - 340),
+      new TextObstacle(canvas, this.ctx,canvas.width * 6, 0, 50, 0, "Dooown"),
       new Obstacle(canvas, this.ctx, canvas.width * 6 + 150, 340, 0)
     ]
   }
@@ -45,7 +50,7 @@ GameScreen.prototype.update = function() {
   this.elements.obstacles.forEach(function(obstacle) {
     obstacle.update();
     if(this.elements.player.hasCollidedWithObstacle(obstacle)) {
-      this.elements.player.receiveDamage();
+      this.elements.player.receiveDamage(obstacle.damage);
       obstacle.destroy();
       this.statusBar.update(this.elements.player.hp);
       if(this.elements.player.hp <= 0) this.changeScreen(this.name)

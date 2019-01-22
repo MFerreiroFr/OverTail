@@ -36,12 +36,12 @@ Player.prototype.stop = function() {
 
 Player.prototype.hasCollidedWithObstacle = function(obstacle) {
   var collidesRight = this.x + this.size / 2 >= obstacle.x;
-  var collidesTop = this.y + this.size / 2<= obstacle.y + obstacle.sizeY;
+  var collidesTop = this.y + this.size / 2 <= obstacle.y + obstacle.sizeY;
   var collidesBottom = this.y + this.size / 2 > obstacle.y;
   if(collidesBottom && collidesRight && collidesTop) console.log(`Collided!`)
   return collidesBottom && collidesRight && collidesTop;
 }
 
-Player.prototype.receiveDamage = function() {
-  this.hp -= 5;
+Player.prototype.receiveDamage = function(damage) {
+  this.hp -= damage;
 }
