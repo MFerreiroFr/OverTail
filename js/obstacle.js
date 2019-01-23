@@ -1,13 +1,13 @@
 "use strict";
 
-function Obstacle(canvas, ctx, x, sizeY, y, damage = 5) {
+function Obstacle(canvas, ctx, x, sizeY, y, speed = 3.7, damage = 5) {
   this.canvas = canvas;
   this.ctx = ctx;
   this.x = x;
   this.y = y;
   this.sizeX = 12;
   this.sizeY = sizeY;
-  this.speed = 3.7;
+  this.speed = speed;
   this.direction = -1;
   this.damage = damage;
   this.color = "white";

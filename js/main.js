@@ -8,6 +8,9 @@ function startGame() {
     var rect = canvas.getBoundingClientRect();
     
     if(game.currentScreen instanceof BasicScreen) game.currentScreen.handleClick(); 
+    setTimeout(function() {
+      document.querySelector("#canvas").classList.add("rotated")
+    }, 4000)
   }
 
   function handleKeyPress(event) {
