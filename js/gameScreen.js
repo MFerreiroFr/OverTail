@@ -60,10 +60,26 @@ GameScreen.prototype.update = function() {
   this.elements.obstacles = this.elements.obstacles.filter(function(obstacle) { return obstacle.x > 0 - obstacle.sizeX })
   this.elements.obstacles.forEach(function(obstacle) {
     obstacle.update();
+    
     if(this.elements.player.hasCollidedWithObstacle(obstacle)) {
-      this.elements.player.receiveDamage(obstacle.damage);
+      switch(obstacle.constructor.name) {
+        case 'Obstacle':
+          this.elements.player.receiveDamage(obstacle.damage);
+          obstacle.destroy();
+          break;
+        case 'EndObstacle':
+          this.changeScreen(this.name, true);
+          break;
+        case 'BlueObstacle':
+          if (this.elements.player.direction != 0) {
+            this.elements.player.receiveDamage(obstacle.damage);
+            obstacle.destroy();
+          }
+      }
+
+      
+
       if(obstacle instanceof EndObstacle) this.changeScreen(this.name, true)
-      obstacle.destroy();
       this.statusBar.update(this.elements.player.hp);
       if(this.elements.player.hp <= 0) this.changeScreen(this.name)
       
