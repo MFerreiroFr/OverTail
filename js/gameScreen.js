@@ -79,7 +79,9 @@ GameScreen.prototype.update = function() {
           break;
         case 'EndObstacle':
           setTimeout(function() { 
-            this.changeScreen(this.name, true) 
+            obstacle.choice === "next" ? 
+              this.changeScreen(this.name, true, true) : 
+              this.changeScreen(this.name, true);
           }.bind(this), 5000);
           setTimeout(function() { 
             document.querySelector("#enemy").classList.toggle("defeated")
