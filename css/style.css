@@ -1,14 +1,50 @@
+@font-face {
+  font-family: 'Determination';
+  src: url('../assets/DeterminationMonoWeb.woff')
+}
+
+@font-face {
+  font-family: 'Monster';
+  src: url('../assets/MonsterFriendFore.otf');
+}
+
 body {
   background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 3rem;
 }
 
 #canvas {
+  margin-left: auto;
   border: 2px solid white;
-  transition: all 4s
+  background-color: #000;
 }
 
 #canvas.rotated {
-}
+   animation: hitEnemy 2s cubic-bezier(.84,-0.06,.25,1.21)
+ }
+
+ @keyframes hitEnemy {
+   50% {
+    transform: translateX(170px);
+   }
+  100% {
+     transform: translateX(0);
+   }
+ }
+
+ #enemy {
+   margin-left: auto;
+   transition: all 2s;
+   position: relative; 
+   z-index: -2;
+ }
+
+ #enemy.defeated {
+   opacity: 0;
+ }
+
+
+

@@ -6,6 +6,8 @@ function Game(canvas) {
   this._changeScreen = function(name, victory = false) {
     switch(name) {
       case "start":
+        document.querySelector("#enemy").classList.remove("defeated");
+        this.canvas.classList.remove("rotated");
         this.currentScreen = new GameScreen("game",this.canvas, this._changeScreen);
         break;
       case "game":

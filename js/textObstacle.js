@@ -7,6 +7,6 @@ TextObstacle.prototype.constructor = TextObstacle;
 
 TextObstacle.prototype.draw = function() {
   this.ctx.fillStyle = "white";
-  this.ctx.font = "Arial 20px";
+  this.ctx.font = "Determination 20px";
   this.ctx.fillText(this.text, this.x, this.y)
 }

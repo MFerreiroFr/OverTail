@@ -6,7 +6,7 @@ function BasicScreen(name, canvas, text, buttonText, changeScreen) {
   this.elements = {
     text: {
       content: text || "start screen",
-      fontSize: "24px Arial",
+      font: "40px Monster",
     },
     button: {
       x: 200,
@@ -14,7 +14,7 @@ function BasicScreen(name, canvas, text, buttonText, changeScreen) {
       width: 100,
       height: 50,
       content: buttonText || "start",
-      font: "24px Arial",
+      font: "24px Determination",
       clicked: false
     }
      
@@ -27,7 +27,7 @@ BasicScreen.prototype.constructor = BasicScreen;
 
 BasicScreen.prototype.draw = function() {
   this.ctx.fillStyle = "white";
-  this.ctx.font = this.elements.text.fontSize;
+  this.ctx.font = this.elements.text.font;
   this.ctx.fillText(this.elements.text.content, this.canvas.width / 2, this.canvas.height / 2);
 
   this.ctx.strokeStyle = "white";
@@ -38,6 +38,8 @@ BasicScreen.prototype.draw = function() {
     this.elements.button.y,
     this.elements.button.width,
     this.elements.button.height);
+  
+  this.ctx.font = this.elements.button.font;
   this.ctx.fillText(
     this.elements.button.content,
     this.elements.button.x + this.elements.button.width / 2,
