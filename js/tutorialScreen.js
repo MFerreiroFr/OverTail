@@ -45,6 +45,7 @@ function TutorialScreen(name, canvas, changeScreen) {
       new EndObstacle(canvas, this.ctx, canvas.width * 12 + 50, 199, canvas.height - this.statusBar.sizeY - 197),
     ]
   }
+  this.levelLength = this.elements.obstacles.length;
 }
 
 TutorialScreen.prototype = Object.create(GameScreen.prototype);

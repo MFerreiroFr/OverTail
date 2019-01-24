@@ -7,7 +7,6 @@ EndObstacle.prototype = Object.create(Obstacle.prototype);
 EndObstacle.prototype.constructor = EndObstacle;
 
 EndObstacle.prototype.draw = function() {
-  console.log(this.x)
   this.ctx.fillStyle = this.color
   this.ctx.fillRect(this.x, this.y , this.sizeX , this.sizeY);
 }

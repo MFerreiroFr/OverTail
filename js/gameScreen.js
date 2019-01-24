@@ -55,11 +55,13 @@ function GameScreen(name, canvas, changeScreen) {
       new EndObstacle(canvas, this.ctx, canvas.width * 12 + 50, 398, 0)
     ]
   }
+  this.levelLength = this.elements.obstacles.length;
 }
 
 GameScreen.prototype.draw = function() {
+  
   this.elements.player.draw();
-  this.statusBar.draw();
+  this.statusBar.draw(this.elements.obstacles.length, this.levelLength);
     this.elements.obstacles.forEach(function(obstacle) {
       obstacle.draw();
     })
