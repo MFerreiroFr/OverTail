@@ -84,7 +84,7 @@ GameScreen.prototype.update = function() {
           setTimeout(function() { 
             document.querySelector("#enemy").classList.toggle("defeated")
           },2000)
-          this.canvas.classList.toggle("rotated");
+          this.canvas.classList.toggle("attack");
           obstacle.destroy();
           break;
         case 'BlueObstacle':

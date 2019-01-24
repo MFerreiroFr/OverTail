@@ -22,7 +22,7 @@ body {
   background-color: #000;
 }
 
-#canvas.rotated {
+#canvas.attack {
    animation: hitEnemy 2s cubic-bezier(.84,-0.06,.25,1.21)
  }
 
