@@ -1,3 +1,5 @@
+"use strict";
+
 function BlueObstacle(canvas, ctx, x, sizeY, y, speed = 3.7, damage = 5) {
   Obstacle.call(this, canvas, ctx, x, sizeY, y, speed, damage);
   this.color = '#59daff';

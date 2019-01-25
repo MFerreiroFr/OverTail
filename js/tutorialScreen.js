@@ -1,3 +1,5 @@
+"use strict";
+
 function TutorialScreen(name, canvas, changeScreen) {
   GameScreen.call(this, name, canvas, changeScreen);
 

@@ -1,3 +1,5 @@
+"use strict";
+
 function StatusBar(canvas, ctx, height) {
   this.canvas = canvas;
   this.ctx = ctx;
