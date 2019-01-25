@@ -61,7 +61,6 @@ BasicScreen.prototype.handleClick = function() {
     event.clientY - canvasPos.top > this.elements.button.y &&
     event.clientY - canvasPos.top < this.elements.button.y + this.elements.button.height
     ) {
-      console.log("button clicked")
       this.elements.button.clicked = true;
     }
 }
